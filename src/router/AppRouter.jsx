@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import MainLayout from '../layout/MainLayout';
 import PageTransition from '../components/PageTransition';
+import Practices from '../pages/Practices';
 
 // Lazy load pages
 const Home = lazy(() => import('../pages/Home'));
@@ -56,6 +57,14 @@ const AppRouter = () => {
               element={
                 <PageTransition>
                   <About />
+                </PageTransition>
+              }
+            />
+            <Route
+                path="/practices"
+              element={
+                <PageTransition>
+                  <Practices />
                 </PageTransition>
               }
             />

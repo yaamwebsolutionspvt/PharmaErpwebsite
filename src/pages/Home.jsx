@@ -1,10 +1,16 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Seo from '../seo/Seo';
 import FeatureCard from '../components/FeatureCard';
 import SectionReveal from '../components/SectionReveal';
 import CTA from '../components/CTA';
 import TestimonialCarousel from '../components/TestimonialCarousel';
+import dashimage1 from '../assets/images/dash1.png';
+import dashimage2 from '../assets/images/dash2.png';
+import heroImage1 from '../assets/images/hero1.png';  
+import heroImage2 from '../assets/images/hero2.png';
+
 import {
   FaCashRegister,
   FaBoxes,
@@ -17,6 +23,36 @@ import {
 } from 'react-icons/fa';
 
 const Home = () => {
+  const heroImages = [
+    { id: 'heroImage1', label: 'Hero Image 1', src: heroImage1 },
+    { id: 'heroImage2', label: 'Hero Image 2', src: heroImage2 },
+  ];
+
+  const dashImages = [
+    { id: 'dashImage1', label: 'Dash Image 1', src: dashimage1 },
+    { id: 'dashImage2', label: 'Dash Image 2', src: dashimage2 },
+  ];
+
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
+
+  useEffect(() => {
+    if (heroImages.length <= 1) return undefined;
+    const interval = setInterval(() => {
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
+  const [currentDashImage, setCurrentDashImage] = useState(0);
+
+  useEffect(() => {
+    if (dashImages.length <= 1) return undefined;
+    const interval = setInterval(() => {
+      setCurrentDashImage((prev) => (prev + 1) % dashImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [dashImages.length]);  
+
   const features = [
     {
       icon: FaCashRegister,
@@ -143,7 +179,16 @@ const Home = () => {
       />
       
       {/* Hero Section with Enhanced Animations */}
-      <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50">
+      <section
+        className="relative py-16 overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.475), rgba(240,249,255,0.45)), url(${heroImages[currentHeroImage].src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          transition: 'background-image 0.8s ease-in-out',
+        }}
+      >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -232,63 +277,80 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            {/* Hero Image/Illustration Area */}
+            {/* Hero Image Slider */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              {/* Placeholder for hero image - Replace with actual image */}
-              <div className="relative bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl p-8 shadow-2xl">
-                <motion.div
-                  animate={floatingAnimation}
-                  className="bg-white rounded-xl p-6 shadow-lg mb-4"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
-                      <FaCashRegister className="text-white text-xl" />
+              <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl p-3">
+                <div className="relative rounded-2xl overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={dashImages[currentDashImage].id}
+                      src={dashImages[currentDashImage].src}
+                      alt={`${dashImages[currentDashImage].label} showcasing Mediyaam pharmacy ERP`}
+                      className="w-full h-[380px] object-cover rounded-2xl"
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.02 }}
+                      transition={{ duration: 0.8, ease: 'easeInOut' }}
+                      loading="eager"
+                    />
+                  </AnimatePresence>
+                  <motion.div
+                    className="absolute inset-0 pointer-events-none"
+                    animate={floatingAnimation}
+                  >
+                    <div className="absolute top-6 left-6 px-4 py-2 bg-white/80 rounded-full shadow-lg text-sm font-semibold text-primary-700 backdrop-blur">
+                      Live Dashboard
                     </div>
-                    <div>
-                      <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
-                      <div className="h-3 bg-gray-100 rounded w-24"></div>
+                    <div className="absolute bottom-6 right-6 px-4 py-2 bg-white/80 rounded-full shadow-lg text-sm font-semibold text-primary-700 backdrop-blur">
+                      AI Insights
+                    </div>
+                  </motion.div>
+                </div>
+                <div className="flex items-center justify-between mt-6 px-4">
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <span className="text-sm uppercase tracking-wide">Screens</span>
+                    <div className="flex gap-2">
+                      {dashImages.map((dash, index) => (
+                        <button
+                          key={dash.id}
+                          onClick={() => setCurrentDashImage(index)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                            currentDashImage === index ? 'bg-primary-600 w-6' : 'bg-gray-300'
+                          }`}
+                          aria-label={`View ${dash.label}`}
+                        />
+                      ))}
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-gray-100 rounded"></div>
-                    <div className="h-3 bg-gray-100 rounded w-5/6"></div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() =>
+                        setCurrentDashImage((prev) =>
+                          prev === 0 ? dashImages.length - 1 : prev - 1
+                        )
+                      }
+                      className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-primary-200 hover:text-primary-600 transition-colors"
+                      aria-label="Previous dash image"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      onClick={() =>
+                        setCurrentDashImage((prev) => (prev + 1) % dashImages.length)
+                      }
+                      className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-primary-200 hover:text-primary-600 transition-colors"
+                      aria-label="Next dash image"
+                    >
+                      ›
+                    </button>
                   </div>
-                </motion.div>
-                <motion.div
-                  animate={floatingAnimation}
-                  transition={{ delay: 0.5 }}
-                  className="bg-white rounded-xl p-6 shadow-lg"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
-                      <FaChartLine className="text-white text-xl" />
-                    </div>
-                    <div>
-                      <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
-                      <div className="h-3 bg-gray-100 rounded w-24"></div>
-                    </div>
-                  </div>
-                  <div className="h-24 bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg"></div>
-                </motion.div>
+                </div>
               </div>
-              {/* Decorative floating elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 bg-primary-400 rounded-full opacity-30 blur-xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-              />
             </motion.div>
           </div>
         </div>

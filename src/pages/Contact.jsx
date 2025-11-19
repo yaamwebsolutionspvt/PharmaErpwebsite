@@ -1,27 +1,41 @@
-import { useState } from 'react';
-import Seo from '../seo/Seo';
-import SectionReveal from '../components/SectionReveal';
-import { submitContactForm } from '../utils/api';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { useState } from "react";
+import Seo from "../seo/Seo";
+import SectionReveal from "../components/SectionReveal";
+import { submitContactForm } from "../utils/api";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import heroBg from "../assets/images/contactImg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [status, setStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('sending');
+    setStatus("sending");
+
     try {
-      await submitContactForm(formData);
-      setStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      const response = await fetch("https://formspree.io/f/xovreekj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch (error) {
-      setStatus('error');
+      setStatus("error");
     }
   };
 
@@ -30,16 +44,16 @@ const Contact = () => {
   };
 
   const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
     mainEntity: {
-      '@type': 'Organization',
-      name: 'Mediyaam',
+      "@type": "Organization",
+      name: "Mediyaam",
       contactPoint: {
-        '@type': 'ContactPoint',
-        telephone: '+1-555-123-4567',
-        email: 'info@mediyaam.com',
-        contactType: 'Customer Service',
+        "@type": "ContactPoint",
+        telephone: "+1-555-123-4567",
+        email: "info@mediyaam.com",
+        contactType: "Customer Service",
       },
     },
   };
@@ -50,16 +64,21 @@ const Contact = () => {
         title="Contact Us — Get in Touch"
         description="Contact Mediyaam for pharmacy ERP software inquiries, demos, support, or sales. We're here to help you transform your pharmacy operations."
         keywords={[
-          'contact pharmacy software',
-          'pharmacy ERP support',
-          'medical store software contact',
+          "contact pharmacy software",
+          "pharmacy ERP support",
+          "medical store software contact",
         ]}
         url="https://mediyaam.example.com/contact"
         canonical="https://mediyaam.example.com/contact"
         type="website"
         schema={schema}
       />
-      <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
+      <section
+        className="relative py-36 bg-center bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+        }}
+      >
         <div className="container mx-auto px-4">
           <SectionReveal>
             <div className="max-w-3xl mx-auto text-center">
@@ -88,14 +107,14 @@ const Contact = () => {
                     <FaPhone className="text-primary-600 mt-1 mr-4" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                      <p className="text-gray-600">+916006222304</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <FaEnvelope className="text-primary-600 mt-1 mr-4" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600">info@mediyaam.com</p>
+                      <p className="text-gray-600">info@yaamwebsolutions.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -103,10 +122,28 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-gray-900">Address</h3>
                       <p className="text-gray-600">
-                        123 Business St, City, Country
+                        Top Floor, Cynosure Tech Near SUMOSTAND, opp. Srinagar -
+                        Kanyakumari Highway, Pamposh Mohalla, Kanyakumari,
+                        Bijbehara, Jammu and Kashmir 192124
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className="mt-10">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Find Us on Map
+                </h2>
+                <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9378.784365495563!2d75.10091848240981!3d33.78905430893889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e21b4c284ee32f%3A0x6861cb8d1bb6e74b!2sYAAM%20Web%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1763528078390!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
             </SectionReveal>
@@ -180,22 +217,22 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   />
                 </div>
-                {status === 'success' && (
+                {status === "success" && (
                   <div className="bg-green-50 text-green-800 p-4 rounded-lg">
                     Thank you! Your message has been sent successfully.
                   </div>
                 )}
-                {status === 'error' && (
+                {status === "error" && (
                   <div className="bg-red-50 text-red-800 p-4 rounded-lg">
                     Something went wrong. Please try again.
                   </div>
                 )}
                 <button
                   type="submit"
-                  disabled={status === 'sending'}
+                  disabled={status === "sending"}
                   className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-semibold disabled:opacity-50"
                 >
-                  {status === 'sending' ? 'Sending...' : 'Send Message'}
+                  {status === "sending" ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </SectionReveal>
@@ -207,4 +244,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

@@ -1,6 +1,9 @@
 import Seo from '../seo/Seo';
 import SectionReveal from '../components/SectionReveal';
 import BlogCard from '../components/BlogCard';
+import BlogPost from './BlogPost';
+
+
 
 const Blog = () => {
   const blogPosts = [
@@ -72,6 +75,8 @@ const Blog = () => {
           </div>
         </div>
       </section>
+      <div> <BlogPost /></div>
+
     </>
   );
 };

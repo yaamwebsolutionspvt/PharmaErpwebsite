@@ -1,27 +1,35 @@
-import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { Link } from "react-router-dom";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     product: [
-      { path: '/product/pos', label: 'POS System' },
-      { path: '/product/inventory', label: 'Inventory Management' },
-      { path: '/product/billing', label: 'Billing Software' },
-      { path: '/product/multi-branch', label: 'Multi-Branch' },
+      { path: "/product/pos", label: "POS System" },
+      { path: "/product/inventory", label: "Inventory Management" },
+      { path: "/product/billing", label: "Billing Software" },
+      { path: "/product/multi-branch", label: "Multi-Branch" },
     ],
     company: [
-      { path: '/about', label: 'About Us' },
-      { path: '/careers', label: 'Careers' },
-      { path: '/case-studies', label: 'Case Studies' },
-      { path: '/blog', label: 'Blog' },
+      { path: "/about", label: "About Us" },
+      { path: "/careers", label: "Careers" },
+      { path: "/case-studies", label: "Case Studies" },
+      { path: "/blog", label: "Blog" },
     ],
     support: [
-      { path: '/faq', label: 'FAQ' },
-      { path: '/contact', label: 'Contact' },
-      { path: '/privacy', label: 'Privacy Policy' },
-      { path: '/terms', label: 'Terms of Service' },
+      { path: "/faq", label: "FAQ" },
+      { path: "/contact", label: "Contact" },
+      { path: "/privacy", label: "Privacy Policy" },
+      { path: "/terms", label: "Terms of Service" },
     ],
   };
 
@@ -35,11 +43,13 @@ const Footer = () => {
               <span className="text-2xl font-bold text-white">Mediyaam</span>
             </Link>
             <p className="text-gray-400 mb-4">
-              Comprehensive pharmacy ERP solution for billing, inventory, POS, and multi-branch management. Streamline your pharmacy operations with our cloud-based software.
+              Comprehensive pharmacy ERP solution for billing, inventory, POS,
+              and multi-branch management. Streamline your pharmacy operations
+              with our cloud-based software.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Yaam-Web-Solutions/61577392363273/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
@@ -48,7 +58,7 @@ const Footer = () => {
                 <FaFacebook size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/Yaam_Web"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
@@ -57,7 +67,7 @@ const Footer = () => {
                 <FaTwitter size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/yaam-web-solutions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
@@ -66,7 +76,7 @@ const Footer = () => {
                 <FaLinkedin size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/yaam_web_solutions/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
@@ -132,24 +142,55 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="flex items-center space-x-2">
+            <a
+              href="tel:+916006222304"
+              className="flex items-center space-x-2 hover:text-primary-400 transition"
+              rel="noopener noreferrer"
+            >
               <FaPhone className="text-primary-400" />
-              <span>+1 (555) 123-4567</span>
-            </div>
-            <div className="flex items-center space-x-2">
+              <span>+91 6006222304</span>
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:info@yaamwebsolutions.com"
+              className="flex items-center space-x-2 hover:text-primary-400 transition"
+              rel="noopener noreferrer"
+            >
               <FaEnvelope className="text-primary-400" />
-              <span>info@mediyaam.com</span>
-            </div>
+              <span>info@yaamwebsolutions.com</span>
+            </a>
             <div className="flex items-center space-x-2">
-              <FaMapMarkerAlt className="text-primary-400" />
-              <span>123 Business St, City, Country</span>
+              <FaMapMarkerAlt className="text-primary-400 text-5xl" />
+
+              <a
+                href="https://www.google.com/maps?q=Top+Floor,+Cynosure+Tech+Near+SUMOSTAND,+opp.+Srinagar+-+Kanyakumari+Highway,+Pamposh+Mohalla,+Kanyakumari,+Bijbehara,+Jammu+and+Kashmir+192124"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-400 transition"
+              >
+                Top Floor, Cynosure Tech Near SUMOSTAND, opp. Srinagar -
+                Kanyakumari Highway, Pamposh Mohalla, Kanyakumari, Bijbehara,
+                Jammu and Kashmir 192124
+              </a>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {currentYear} Mediyaam. All rights reserved.</p>
+          <p>
+            &copy; {currentYear} Made with{" "}
+            <span className="text-red-500">❤️</span> by{" "}
+            <a
+              href="https://yaamwebsolutions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              yaamwebsolutions
+            </a>
+          </p>
         </div>
       </div>
     </footer>
@@ -157,4 +198,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
