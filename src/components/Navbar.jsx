@@ -46,15 +46,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-white shadow-md py-3'
           : 'bg-white/95 backdrop-blur-sm py-4'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
+            <img src="/logo.svg" alt="Mediyaam Logo" className="h-8 w-8" />
             <span className="text-2xl font-bold text-primary-600">Mediyaam</span>
           </Link>
 
@@ -90,9 +90,8 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-gray-700 hover:text-primary-600 transition-colors font-medium ${
-                    location.pathname === link.path ? 'text-primary-600' : ''
-                  }`}
+                  className={`text-gray-700 hover:text-primary-600 transition-colors font-medium ${location.pathname === link.path ? 'text-primary-600' : ''
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -154,9 +153,8 @@ const Navbar = () => {
                     <Link
                       key={link.path}
                       to={link.path}
-                      className={`text-gray-700 hover:text-primary-600 font-medium ${
-                        location.pathname === link.path ? 'text-primary-600' : ''
-                      }`}
+                      className={`text-gray-700 hover:text-primary-600 font-medium ${location.pathname === link.path ? 'text-primary-600' : ''
+                        }`}
                     >
                       {link.label}
                     </Link>
