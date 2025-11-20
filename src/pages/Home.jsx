@@ -6,10 +6,9 @@ import FeatureCard from '../components/FeatureCard';
 import SectionReveal from '../components/SectionReveal';
 import CTA from '../components/CTA';
 import TestimonialCarousel from '../components/TestimonialCarousel';
-import dashimage1 from '../assets/images/dash1.png';
-import dashimage2 from '../assets/images/dash2.png';
-import heroImage1 from '../assets/images/hero1.png';  
-import heroImage2 from '../assets/images/hero2.png';
+import dashimage1 from '../assets/images/dashboard_screen_1.png';
+import dashimage2 from '../assets/images/dashboard_screen_2.png';
+import heroImage1 from '../assets/images/hero_bg_1.png';
 
 import {
   FaCashRegister,
@@ -25,12 +24,11 @@ import {
 const Home = () => {
   const heroImages = [
     { id: 'heroImage1', label: 'Hero Image 1', src: heroImage1 },
-    { id: 'heroImage2', label: 'Hero Image 2', src: heroImage2 },
   ];
 
   const dashImages = [
-    { id: 'dashImage1', label: 'Dash Image 1', src: dashimage1 },
-    { id: 'dashImage2', label: 'Dash Image 2', src: dashimage2 },
+    { id: 'dashImage1', label: 'Dashboard Overview', src: dashimage1 },
+    { id: 'dashImage2', label: 'POS Screen', src: dashimage2 },
   ];
 
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
@@ -51,7 +49,7 @@ const Home = () => {
       setCurrentDashImage((prev) => (prev + 1) % dashImages.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [dashImages.length]);  
+  }, [dashImages.length]);
 
   const features = [
     {
@@ -177,7 +175,7 @@ const Home = () => {
         type="website"
         schema={schema}
       />
-      
+
       {/* Hero Section with Enhanced Animations */}
       <section
         className="relative py-16 overflow-hidden"
@@ -319,9 +317,8 @@ const Home = () => {
                         <button
                           key={dash.id}
                           onClick={() => setCurrentDashImage(index)}
-                          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                            currentDashImage === index ? 'bg-primary-600 w-6' : 'bg-gray-300'
-                          }`}
+                          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${currentDashImage === index ? 'bg-primary-600 w-6' : 'bg-gray-300'
+                            }`}
                           aria-label={`View ${dash.label}`}
                         />
                       ))}
