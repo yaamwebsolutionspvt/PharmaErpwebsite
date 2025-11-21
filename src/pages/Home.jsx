@@ -9,6 +9,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel';
 import dashimage1 from '../assets/images/dashboard_screen_1.png';
 import dashimage2 from '../assets/images/dashboard_screen_2.png';
 import heroImage1 from '../assets/images/hero_bg_1.png';
+import faqs from '../data/faqs';
 
 import {
   FaCashRegister,
@@ -126,6 +127,8 @@ const Home = () => {
       role: 'CEO, MedLife Pharmaceuticals',
     },
   ];
+
+  const faqPreview = faqs.slice(0, 6);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -521,6 +524,51 @@ const Home = () => {
           </SectionReveal>
           <div className="max-w-4xl mx-auto">
             <TestimonialCarousel testimonials={testimonials} />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Preview Section */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
+            <SectionReveal className="flex-1">
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-primary-500 font-semibold mb-3">
+                  Questions we hear most
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  FAQ highlights
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl">
+                  Buyers often ask about compliance, onboarding, integrations,
+                  and support. Here are the top answers—explore the full
+                  knowledge base for more detail.
+                </p>
+              </div>
+            </SectionReveal>
+            <SectionReveal delay={0.1}>
+              <Link
+                to="/faq"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-primary-600 text-primary-600 font-semibold hover:bg-primary-50 transition-colors"
+              >
+                View all FAQs
+              </Link>
+            </SectionReveal>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {faqPreview.map((faq, index) => (
+              <SectionReveal key={faq.question} delay={index * 0.05}>
+                <div className="bg-gray-50 rounded-2xl p-6 h-full border border-gray-100 hover:border-primary-200 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-gray-600 text-base leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </SectionReveal>
+            ))}
           </div>
         </div>
       </section>
