@@ -40,8 +40,8 @@ const Navbar = () => {
     { path: '/pricing', label: 'Pricing' },
     { path: '/blog', label: 'Blog' },
     { path: '/case-studies', label: 'Case Studies' },
-    { path: '/faq', label: 'FAQ' },
-    { path: '/contact', label: 'Contact' },
+    // { path: '/faq', label: 'FAQ' },
+    // { path: '/contact', label: 'Contact' },
   ];
 
   return (

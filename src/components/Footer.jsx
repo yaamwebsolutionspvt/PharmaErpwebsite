@@ -188,7 +188,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-white transition"
             >
-              yaamwebsolutions
+              yaamwebsolutions.com
             </a>
           </p>
         </div>
