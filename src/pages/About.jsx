@@ -1,6 +1,6 @@
 import Seo from "../seo/Seo";
 import SectionReveal from "../components/SectionReveal";
-import heroBg from "../assets/images/about.png";
+import heroBg from "../assets/images/aboutbg.png";
 import { FaAward, FaUsers, FaGlobe, FaLightbulb } from "react-icons/fa";
 
 const About = () => {
@@ -9,7 +9,7 @@ const About = () => {
     { icon: FaAward, value: "15+", label: "Years Experience" },
     { icon: FaLightbulb, value: "24/7", label: "Support Available" },
     { icon: FaUsers, value: "10k+", label: "Pharmacies Served" },
-    ];
+  ];
 
   const schema = {
     "@context": "https://schema.org",
@@ -21,8 +21,16 @@ const About = () => {
     logo: "https://mediyaam.example.com/assets/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-555-123-4567",
+      telephone: "+91-6006222304",
       contactType: "Customer Service",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Near SUMOSTAND Stand Bijbehara",
+      addressLocality: "Anantnag",
+      addressRegion: "Jammu and Kashmir",
+      postalCode: "192124",
+      addressCountry: "India",
     },
   };
 
@@ -45,9 +53,9 @@ const About = () => {
 
       {/* HERO SECTION WITH BACKGROUND IMAGE */}
       <section
-        className="relative py-32 bg-center bg-cover bg-no-repeat"
+        className="relative lg:py-36 py-24 bg-center bg-cover bg-no-repeat "
         style={{
-          backgroundImage: `url(${heroBg})`,
+          backgroundImage: `url(${"https://res.cloudinary.com/dw1sh368y/image/upload/v1767251001/contactBg_chdnbd.webp"})`,
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>

@@ -3,7 +3,7 @@ import Seo from "../seo/Seo";
 import SectionReveal from "../components/SectionReveal";
 import { submitContactForm } from "../utils/api";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import heroBg from "../assets/images/contactImg.png";
+import heroBg from "../assets/images/contactbg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -74,18 +74,19 @@ const Contact = () => {
         schema={schema}
       />
       <section
-        className="relative py-36 bg-center bg-cover bg-no-repeat"
+        className="relative py-48 md:py-60 bg-center bg-cover bg-no-repeat bg-gray-900"
         style={{
-          backgroundImage: `url(${heroBg})`,
+          backgroundImage: `url(${"https://res.cloudinary.com/dw1sh368y/image/upload/v1767250970/contactbg_ubhkyz.webp"})`,
         }}
       >
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <SectionReveal>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Get in Touch
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-white leading-relaxed">
                 Have questions? We'd love to hear from you. Send us a message
                 and we'll respond as soon as possible.
               </p>

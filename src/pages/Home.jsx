@@ -6,9 +6,9 @@ import FeatureCard from '../components/FeatureCard';
 import SectionReveal from '../components/SectionReveal';
 import CTA from '../components/CTA';
 import TestimonialCarousel from '../components/TestimonialCarousel';
-import dashimage1 from '../assets/images/dashboard_screen_1.png';
-import dashimage2 from '../assets/images/dashboard_screen_2.png';
-import heroImage1 from '../assets/images/hero_bg_1.png';
+const dashimage1 = "https://res.cloudinary.com/dw1sh368y/image/upload/v1767250974/dashboard_screen_2_bio3us.webp";
+const dashimage2 = "https://res.cloudinary.com/dw1sh368y/image/upload/v1767250967/dashboard_screen_1_bgwjjw.webp";
+const heroImage1 = "https://res.cloudinary.com/dw1sh368y/image/upload/v1767251001/contactBg_chdnbd.webp";
 import faqs from '../data/faqs';
 
 import {
