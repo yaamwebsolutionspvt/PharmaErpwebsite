@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Seo from '../seo/Seo';
 import FeatureCard from '../components/FeatureCard';
@@ -260,7 +260,7 @@ const Home = () => {
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-colors font-semibold text-center shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     Get Started Free
@@ -269,7 +269,7 @@ const Home = () => {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
-                    to="/pricing"
+                    href="/pricing"
                     className="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors font-semibold text-center flex items-center justify-center"
                   >
                     View Pricing
@@ -549,7 +549,7 @@ const Home = () => {
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <Link
-                to="/faq"
+                href="/faq"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-primary-600 text-primary-600 font-semibold hover:bg-primary-50 transition-colors"
               >
                 View all FAQs

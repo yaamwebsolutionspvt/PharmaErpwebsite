@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+"use client";
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
-import { useState } from 'react';
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -52,4 +52,3 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
-

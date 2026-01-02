@@ -3,7 +3,7 @@
  * Placeholder functions that can be swapped with actual API calls
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 /**
  * Generic API request handler
@@ -21,11 +21,11 @@ const request = async (endpoint, options = {}) => {
   try {
     const response = await fetch(url, config);
     const data = await response.json();
-    
+
     if (!response.ok) {
       throw new Error(data.message || 'An error occurred');
     }
-    
+
     return data;
   } catch (error) {
     console.error('API Error:', error);
@@ -44,7 +44,7 @@ export const submitContactForm = async (formData) => {
       resolve({ success: true, message: 'Thank you for your message!' });
     }, 1000);
   });
-  
+
   // Future implementation:
   // return request('/contact', {
   //   method: 'POST',
@@ -63,7 +63,7 @@ export const subscribeNewsletter = async (email) => {
       resolve({ success: true, message: 'Successfully subscribed!' });
     }, 1000);
   });
-  
+
   // Future implementation:
   // return request('/newsletter', {
   //   method: 'POST',
@@ -82,7 +82,7 @@ export const requestDemo = async (demoData) => {
       resolve({ success: true, message: 'Demo request received!' });
     }, 1000);
   });
-  
+
   // Future implementation:
   // return request('/demo', {
   //   method: 'POST',

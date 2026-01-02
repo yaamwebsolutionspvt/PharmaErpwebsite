@@ -22,7 +22,7 @@ const Seo = ({
 }) => {
   useEffect(() => {
     // Validate required props in development
-    if (import.meta.env.DEV) {
+    if (process.env.NODE_ENV === 'development') {
       if (!title) {
         console.warn('Seo: title prop is required');
       }
@@ -33,7 +33,7 @@ const Seo = ({
 
     // Build full title
     const fullTitle = title ? `${seoConfig.titlePrefix}${title}` : seoConfig.siteName;
-    
+
     // Use provided values or fallback to config defaults
     const metaDescription = description || seoConfig.defaultDescription;
     const metaKeywords = keywords.length > 0 ? keywords : seoConfig.defaultKeywords;
@@ -47,7 +47,7 @@ const Seo = ({
       const attr = property ? 'property' : 'name';
       const selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
       let tag = document.querySelector(selector);
-      
+
       if (!tag) {
         tag = document.createElement('meta');
         tag.setAttribute(attr, name);
@@ -61,7 +61,7 @@ const Seo = ({
     const upsertLinkTag = (rel, href) => {
       const selector = `link[rel="${rel}"]`;
       let tag = document.querySelector(selector);
-      
+
       if (!tag) {
         tag = document.createElement('link');
         tag.setAttribute('rel', rel);
@@ -113,7 +113,7 @@ const Seo = ({
 
     // JSON-LD Schema
     let jsonLdScript = document.querySelector('script[data-mediyaam="json-ld"]');
-    
+
     // Generate schema if type is article and no custom schema provided
     let finalSchema = schema;
     if (type === 'article' && !schema) {

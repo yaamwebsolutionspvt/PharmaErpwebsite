@@ -1,6 +1,5 @@
 import Seo from "../seo/Seo";
 import SectionReveal from "../components/SectionReveal";
-import heroBg from "../assets/images/aboutbg.png";
 import { FaAward, FaUsers, FaGlobe, FaLightbulb } from "react-icons/fa";
 
 const About = () => {

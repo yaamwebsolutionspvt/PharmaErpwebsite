@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import PropTypes from 'prop-types';
@@ -13,11 +13,10 @@ const PricingTable = ({ plans }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className={`bg-white rounded-xl shadow-lg p-8 ${
-            plan.featured
+          className={`bg-white rounded-xl shadow-lg p-8 ${plan.featured
               ? 'border-2 border-primary-600 transform scale-105'
               : 'border border-gray-200'
-          }`}
+            }`}
         >
           {plan.featured && (
             <div className="bg-primary-600 text-white text-center py-2 rounded-t-lg -mt-8 -mx-8 mb-4">
@@ -51,12 +50,11 @@ const PricingTable = ({ plans }) => {
             ))}
           </ul>
           <Link
-            to={plan.ctaPath}
-            className={`block w-full text-center py-3 rounded-lg font-semibold transition-colors ${
-              plan.featured
+            href={plan.ctaPath}
+            className={`block w-full text-center py-3 rounded-lg font-semibold transition-colors ${plan.featured
                 ? 'bg-primary-600 text-white hover:bg-primary-700'
                 : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-            }`}
+              }`}
           >
             {plan.ctaLabel}
           </Link>

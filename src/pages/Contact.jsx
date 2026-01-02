@@ -3,7 +3,6 @@ import Seo from "../seo/Seo";
 import SectionReveal from "../components/SectionReveal";
 import { submitContactForm } from "../utils/api";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import heroBg from "../assets/images/contactbg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

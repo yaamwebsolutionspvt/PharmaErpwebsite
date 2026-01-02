@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaCalendar, FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
@@ -13,7 +13,7 @@ const BlogCard = ({ post, delay = 0 }) => {
       className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden"
     >
       {post.image && (
-        <Link to={post.path}>
+        <Link href={post.path}>
           <img
             src={post.image}
             alt={post.title}
@@ -37,7 +37,7 @@ const BlogCard = ({ post, delay = 0 }) => {
             </span>
           )}
         </div>
-        <Link to={post.path}>
+        <Link href={post.path}>
           <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
             {post.title}
           </h3>
@@ -46,7 +46,7 @@ const BlogCard = ({ post, delay = 0 }) => {
           <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
         )}
         <Link
-          to={post.path}
+          href={post.path}
           className="text-primary-600 font-semibold hover:text-primary-700 transition-colors"
         >
           Read More →

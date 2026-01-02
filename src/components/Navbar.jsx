@@ -1,12 +1,14 @@
+"use client";
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +20,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -40,8 +42,6 @@ const Navbar = () => {
     { path: '/pricing', label: 'Pricing' },
     { path: '/blog', label: 'Blog' },
     { path: '/case-studies', label: 'Case Studies' },
-    // { path: '/faq', label: 'FAQ' },
-    // { path: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -53,7 +53,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <img src="/logo.svg" alt="Mediyaam Logo" className="h-8 w-8" />
             <span className="text-2xl font-bold text-primary-600">Mediyaam</span>
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 return (
                   <div key={link.path} className="relative group">
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
                     >
                       {link.label}
@@ -75,7 +75,7 @@ const Navbar = () => {
                         {link.submenu.map((sub) => (
                           <Link
                             key={sub.path}
-                            to={sub.path}
+                            href={sub.path}
                             className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
                           >
                             {sub.label}
@@ -89,8 +89,8 @@ const Navbar = () => {
               return (
                 <Link
                   key={link.path}
-                  to={link.path}
-                  className={`text-gray-700 hover:text-primary-600 transition-colors font-medium ${location.pathname === link.path ? 'text-primary-600' : ''
+                  href={link.path}
+                  className={`text-gray-700 hover:text-primary-600 transition-colors font-medium ${pathname === link.path ? 'text-primary-600' : ''
                     }`}
                 >
                   {link.label}
@@ -98,7 +98,7 @@ const Navbar = () => {
               );
             })}
             <Link
-              to="/contact"
+              href="/contact"
               className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium"
             >
               Get Started
@@ -130,7 +130,7 @@ const Navbar = () => {
                     return (
                       <div key={link.path}>
                         <Link
-                          to={link.path}
+                          href={link.path}
                           className="block text-gray-700 hover:text-primary-600 font-medium"
                         >
                           {link.label}
@@ -139,7 +139,7 @@ const Navbar = () => {
                           {link.submenu.map((sub) => (
                             <Link
                               key={sub.path}
-                              to={sub.path}
+                              href={sub.path}
                               className="block text-gray-600 hover:text-primary-600 text-sm"
                             >
                               {sub.label}
@@ -152,8 +152,8 @@ const Navbar = () => {
                   return (
                     <Link
                       key={link.path}
-                      to={link.path}
-                      className={`text-gray-700 hover:text-primary-600 font-medium ${location.pathname === link.path ? 'text-primary-600' : ''
+                      href={link.path}
+                      className={`text-gray-700 hover:text-primary-600 font-medium ${pathname === link.path ? 'text-primary-600' : ''
                         }`}
                     >
                       {link.label}
@@ -161,7 +161,7 @@ const Navbar = () => {
                   );
                 })}
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium text-center"
                 >
                   Get Started
@@ -176,4 +176,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

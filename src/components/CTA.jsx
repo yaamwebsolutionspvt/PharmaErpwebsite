@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
@@ -26,7 +26,7 @@ const CTA = ({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {primaryCTA && (
               <Link
-                to={primaryCTA.path}
+                href={primaryCTA.path}
                 className="bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold shadow-lg"
               >
                 {primaryCTA.label}
@@ -34,7 +34,7 @@ const CTA = ({
             )}
             {secondaryCTA && (
               <Link
-                to={secondaryCTA.path}
+                href={secondaryCTA.path}
                 className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors font-semibold"
               >
                 {secondaryCTA.label}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
@@ -56,7 +56,7 @@ const Hero = ({
             >
               {primaryCTA && (
                 <Link
-                  to={primaryCTA.path}
+                  href={primaryCTA.path}
                   className="bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-colors font-semibold text-center shadow-lg hover:shadow-xl"
                 >
                   {primaryCTA.label}
@@ -64,7 +64,7 @@ const Hero = ({
               )}
               {secondaryCTA && (
                 <Link
-                  to={secondaryCTA.path}
+                  href={secondaryCTA.path}
                   className="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors font-semibold text-center"
                 >
                   {secondaryCTA.label}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Seo from '../seo/Seo';
 import SectionReveal from '../components/SectionReveal';
 import FeatureCard from '../components/FeatureCard';
@@ -122,7 +122,7 @@ const Product = () => {
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productFeatures.map((feature, index) => (
-              <Link key={index} to={feature.path}>
+              <Link key={index} href={feature.path}>
                 <FeatureCard
                   icon={feature.icon}
                   title={feature.title}

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import {
   FaFacebook,
   FaTwitter,
@@ -39,7 +40,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
+            <Link href="/" className="flex items-center space-x-2 mb-4">
               <span className="text-2xl font-bold text-white">Mediyaam</span>
             </Link>
             <p className="text-gray-400 mb-4">
@@ -94,7 +95,7 @@ const Footer = () => {
               {footerLinks.product.map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="hover:text-primary-400 transition-colors"
                   >
                     {link.label}
@@ -111,7 +112,7 @@ const Footer = () => {
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="hover:text-primary-400 transition-colors"
                   >
                     {link.label}
@@ -128,7 +129,7 @@ const Footer = () => {
               {footerLinks.support.map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="hover:text-primary-400 transition-colors"
                   >
                     {link.label}
