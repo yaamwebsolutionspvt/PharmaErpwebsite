@@ -185,8 +185,8 @@ const Home = () => {
           'pharma inventory management',
           'cloud pharmacy software',
         ]}
-        url="pharmacysoftwareindia.com"
-        canonical="pharmacysoftwareindia.com"
+        url="https://pharmacysoftwareindia.com"
+        canonical="https://pharmacysoftwareindia.com"
         type="website"
         schema={schema}
       />

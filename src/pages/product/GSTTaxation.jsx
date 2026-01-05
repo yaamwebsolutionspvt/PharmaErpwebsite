@@ -62,8 +62,8 @@ const GSTTaxation = () => {
           'pharmacy tax software',
           'GSTR reports pharmacy',
         ]}
-        url="pharmacysoftwareindia.com/product/gst-taxation"
-        canonical="pharmacysoftwareindia.com/product/gst-taxation"
+        url="https://pharmacysoftwareindia.com/product/gst-taxation"
+        canonical="https://pharmacysoftwareindia.com/product/gst-taxation"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

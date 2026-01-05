@@ -98,8 +98,8 @@ const Product = () => {
           'pharma inventory software',
           'best pharma distribution software in india',
         ]}
-        url="pharmacysoftwareindia.com/product"
-        canonical="pharmacysoftwareindia.com/product"
+        url="https://pharmacysoftwareindia.com/product"
+        canonical="https://pharmacysoftwareindia.com/product"
         type="website"
         schema={schema}
       />

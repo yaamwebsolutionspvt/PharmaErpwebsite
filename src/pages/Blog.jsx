@@ -50,8 +50,8 @@ const Blog = () => {
                               'GST',
                               'POS'
                         ]}
-                        url="pharmacysoftwareindia.com/blog"
-                        canonical="pharmacysoftwareindia.com/blog"
+                        url="https://pharmacysoftwareindia.com/blog"
+                        canonical="https://pharmacysoftwareindia.com/blog"
                         type="website"
                   />
 

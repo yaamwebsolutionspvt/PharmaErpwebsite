@@ -1,0 +1,12 @@
+Contact: mailto:info@yaamwebsolutions.com
+Contact: tel:+91-6006222304
+Expires: 2027-01-05T12:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://pharmacysoftwareindia.com/.well-known/security.txt
+Policy: https://pharmacysoftwareindia.com/privacy
+Hiring: https://pharmacysoftwareindia.com/careers
+Acknowledgments: https://pharmacysoftwareindia.com/security-acknowledgments
+
+# Security Contact Information
+# This file is used by security researchers to report vulnerabilities
+# Learn more: https://securitytxt.org/

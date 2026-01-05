@@ -92,8 +92,8 @@ const Pricing = () => {
           'pharmacy software cost',
           'medical store software price',
         ]}
-        url="pharmacysoftwareindia.com/pricing"
-        canonical="pharmacysoftwareindia.com/pricing"
+        url="https://pharmacysoftwareindia.com/pricing"
+        canonical="https://pharmacysoftwareindia.com/pricing"
         type="website"
         schema={schema}
       />

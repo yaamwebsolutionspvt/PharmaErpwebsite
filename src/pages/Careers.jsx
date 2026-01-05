@@ -30,8 +30,8 @@ const Careers = () => {
         title="Careers — Join the Mediyaam Team"
         description="Join Mediyaam and help transform pharmacy management. We're looking for talented individuals to join our growing team."
         keywords={['mediyaam careers', 'pharmacy software jobs']}
-        url="pharmacysoftwareindia.com/careers"
-        canonical="pharmacysoftwareindia.com/careers"
+        url="https://pharmacysoftwareindia.com/careers"
+        canonical="https://pharmacysoftwareindia.com/careers"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

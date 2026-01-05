@@ -79,8 +79,8 @@ const Billing = () => {
           'medical billing software',
           'pharmacy invoice software',
         ]}
-        url="pharmacysoftwareindia.com/product/billing"
-        canonical="pharmacysoftwareindia.com/product/billing"
+        url="https://pharmacysoftwareindia.com/product/billing"
+        canonical="https://pharmacysoftwareindia.com/product/billing"
         type="website"
         schema={schema}
       />

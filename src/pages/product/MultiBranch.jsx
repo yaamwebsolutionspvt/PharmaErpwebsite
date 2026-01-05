@@ -62,8 +62,8 @@ const MultiBranch = () => {
           'cloud pharmacy software',
           'pharmacy franchise software',
         ]}
-        url="pharmacysoftwareindia.com/product/multi-branch"
-        canonical="pharmacysoftwareindia.com/product/multi-branch"
+        url="https://pharmacysoftwareindia.com/product/multi-branch"
+        canonical="https://pharmacysoftwareindia.com/product/multi-branch"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

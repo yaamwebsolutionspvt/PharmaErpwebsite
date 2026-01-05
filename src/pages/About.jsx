@@ -16,8 +16,8 @@ const About = () => {
     name: "Mediyaam",
     description:
       "Leading provider of pharmacy ERP solutions for medical stores and pharmacy chains.",
-    url: "pharmacysoftwareindia.com",
-    logo: "pharmacysoftwareindia.com/assets/logo.png",
+    url: "https://pharmacysoftwareindia.com",
+    logo: "https://pharmacysoftwareindia.com/assets/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-6006222304",
@@ -47,8 +47,8 @@ const About = () => {
           "medical store software",
           "pharmacy management solutions",
         ]}
-        url="pharmacysoftwareindia.com/about"
-        canonical="pharmacysoftwareindia.com/about"
+        url="https://pharmacysoftwareindia.com/about"
+        canonical="https://pharmacysoftwareindia.com/about"
         type="website"
         schema={schema}
       />

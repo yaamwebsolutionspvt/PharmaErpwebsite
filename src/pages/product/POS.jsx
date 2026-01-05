@@ -75,8 +75,8 @@ const POS = () => {
           'best pharmacy pos system in india',
           'pharmacy billing software india',
         ]}
-        url="pharmacysoftwareindia.com/product/pos"
-        canonical="pharmacysoftwareindia.com/product/pos"
+        url="https://pharmacysoftwareindia.com/product/pos"
+        canonical="https://pharmacysoftwareindia.com/product/pos"
         type="website"
         schema={schema}
       />

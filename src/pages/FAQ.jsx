@@ -30,8 +30,8 @@ const FAQ = () => {
           'pharmacy software questions',
           'medical store software FAQ',
         ]}
-        url="pharmacysoftwareindia.com/faq"
-        canonical="pharmacysoftwareindia.com/faq"
+        url="https://pharmacysoftwareindia.com/faq"
+        canonical="https://pharmacysoftwareindia.com/faq"
         type="website"
         schema={schema}
       />

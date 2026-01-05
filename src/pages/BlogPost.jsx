@@ -166,8 +166,8 @@ const BlogPost = () => {
                 title={`${post.title} — Mediyaam Blog`}
                 description={post.description}
                 keywords={post.keywords}
-                url={`pharmacysoftwareindia.com/blog/${slug}`}
-                canonical={`pharmacysoftwareindia.com/blog/${slug}`}
+                url={`https://pharmacysoftwareindia.com/blog/${slug}`}
+                canonical={`https://pharmacysoftwareindia.com/blog/${slug}`}
                 type="article"
                 publishedTime={post.publishedTime}
                 modifiedTime={post.modifiedTime}

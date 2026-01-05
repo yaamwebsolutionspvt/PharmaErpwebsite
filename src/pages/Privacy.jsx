@@ -8,8 +8,8 @@ const Privacy = () => {
         title="Privacy Policy — Mediyaam"
         description="Read Mediyaam's privacy policy to understand how we collect, use, and protect your healthcare data with industry-leading security standards."
         keywords={['privacy policy', 'data protection', 'HIPAA compliance', 'healthcare data security']}
-        url="pharmacysoftwareindia.com/privacy"
-        canonical="pharmacysoftwareindia.com/privacy"
+        url="https://pharmacysoftwareindia.com/privacy"
+        canonical="https://pharmacysoftwareindia.com/privacy"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

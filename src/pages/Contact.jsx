@@ -67,8 +67,8 @@ const Contact = () => {
           "pharmacy ERP support",
           "medical store software contact",
         ]}
-        url="pharmacysoftwareindia.com/contact"
-        canonical="pharmacysoftwareindia.com/contact"
+        url="https://pharmacysoftwareindia.com/contact"
+        canonical="https://pharmacysoftwareindia.com/contact"
         type="website"
         schema={schema}
       />

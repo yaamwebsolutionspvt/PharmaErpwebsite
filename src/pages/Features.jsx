@@ -65,8 +65,8 @@ const Features = () => {
           'pharmacy software features',
           'medical store software features',
         ]}
-        url="pharmacysoftwareindia.com/features"
-        canonical="pharmacysoftwareindia.com/features"
+        url="https://pharmacysoftwareindia.com/features"
+        canonical="https://pharmacysoftwareindia.com/features"
         type="website"
       />
       <main id="main-content">

@@ -8,8 +8,8 @@ const Terms = () => {
         title="Terms of Service — Mediyaam"
         description="Read Mediyaam's terms of service to understand the terms and conditions for using our pharmacy ERP software and related services."
         keywords={['terms of service', 'terms and conditions', 'user agreement', 'pharmacy software terms']}
-        url="pharmacysoftwareindia.com/terms"
-        canonical="pharmacysoftwareindia.com/terms"
+        url="https://pharmacysoftwareindia.com/terms"
+        canonical="https://pharmacysoftwareindia.com/terms"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

@@ -141,8 +141,8 @@ const CaseStudies = () => {
           'pharmacy success stories',
           'medical store case study',
         ]}
-        url="pharmacysoftwareindia.com/case-studies"
-        canonical="pharmacysoftwareindia.com/case-studies"
+        url="https://pharmacysoftwareindia.com/case-studies"
+        canonical="https://pharmacysoftwareindia.com/case-studies"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
