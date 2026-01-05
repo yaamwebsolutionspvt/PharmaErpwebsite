@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Mediyaam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 50%, #eef2ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 150px;
+            color: #14b8a6;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        h2 {
+            font-size: 32px;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        .emoji {
+            font-size: 80px;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #14b8a6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: white;
+            color: #14b8a6;
+            border: 2px solid #14b8a6;
+        }
+        .btn-secondary:hover {
+            background: #f0fdfa;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 100px; }
+            h2 { font-size: 24px; }
+            p { font-size: 16px; }
+            .buttons { flex-direction: column; }
+            a { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <div class="emoji">💊</div>
+        <div class="buttons">
+            <a href="/" class="btn-primary">Back to Home</a>
+            <a href="/contact" class="btn-secondary">Contact Support</a>
+        </div>
+    </div>
+</body>
+</html>

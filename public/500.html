@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Server Error | Mediyaam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 50%, #fff7ed 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 150px;
+            color: #dc2626;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        h2 {
+            font-size: 32px;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        .emoji {
+            font-size: 80px;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        a, button {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-primary {
+            background: #14b8a6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: white;
+            color: #14b8a6;
+            border: 2px solid #14b8a6;
+        }
+        .btn-secondary:hover {
+            background: #f0fdfa;
+            transform: translateY(-2px);
+        }
+        .support {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .support p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .support a {
+            color: #14b8a6;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0;
+        }
+        .support a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 100px; }
+            h2 { font-size: 24px; }
+            p { font-size: 16px; }
+            .buttons { flex-direction: column; }
+            a, button { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>500</h1>
+        <h2>Internal Server Error</h2>
+        <p>Something went wrong on our end. We're working to fix it.</p>
+        <div class="emoji">⚠️</div>
+        <div class="buttons">
+            <button onclick="location.reload()" class="btn-primary">Try Again</button>
+            <a href="/" class="btn-secondary">Back to Home</a>
+        </div>
+        <div class="support">
+            <p>If the problem persists, contact our support:</p>
+            <a href="mailto:info@yaamwebsolutions.com">📧 info@yaamwebsolutions.com</a>
+            <br><br>
+            <a href="tel:+916006222304">📞 +91 6006222304</a>
+        </div>
+    </div>
+</body>
+</html>
