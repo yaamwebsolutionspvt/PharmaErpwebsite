@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    setMobileSubmenuOpen(false);
   }, [pathname]);
 
   const navLinks = [
@@ -47,8 +49,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white shadow-md py-3'
-          : 'bg-white/95 backdrop-blur-sm py-4'
+        ? 'bg-white shadow-md py-3'
+        : 'bg-white/95 backdrop-blur-sm py-4'
         }`}
     >
       <div className="container mx-auto px-4">
@@ -124,28 +126,45 @@ const Navbar = () => {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden mt-4 overflow-hidden"
             >
-              <div className="flex flex-col space-y-4 pb-4">
+              <div className="flex flex-col space-y-4 pb-4 max-h-[calc(100vh-100px)] overflow-y-auto">
                 {navLinks.map((link) => {
                   if (link.submenu) {
                     return (
                       <div key={link.path}>
-                        <Link
-                          href={link.path}
-                          className="block text-gray-700 hover:text-primary-600 font-medium"
+                        <button
+                          onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
+                          className="flex items-center justify-between w-full text-gray-700 hover:text-primary-600 font-medium"
                         >
-                          {link.label}
-                        </Link>
-                        <div className="ml-4 mt-2 space-y-2">
-                          {link.submenu.map((sub) => (
-                            <Link
-                              key={sub.path}
-                              href={sub.path}
-                              className="block text-gray-600 hover:text-primary-600 text-sm"
+                          <span>{link.label}</span>
+                          {mobileSubmenuOpen ? (
+                            <FaChevronUp className="text-sm" />
+                          ) : (
+                            <FaChevronDown className="text-sm" />
+                          )}
+                        </button>
+                        <AnimatePresence>
+                          {mobileSubmenuOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
                             >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
+                              <div className="ml-4 mt-2 space-y-2">
+                                {link.submenu.map((sub) => (
+                                  <Link
+                                    key={sub.path}
+                                    href={sub.path}
+                                    className="block text-gray-600 hover:text-primary-600 text-sm py-1"
+                                  >
+                                    {sub.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     );
                   }

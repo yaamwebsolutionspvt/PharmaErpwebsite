@@ -161,14 +161,14 @@ const Footer = () => {
               <FaEnvelope className="text-primary-400" />
               <span>info@yaamwebsolutions.com</span>
             </a>
-            <div className="flex items-center space-x-2">
-              <FaMapMarkerAlt className="text-primary-400 text-5xl" />
+            <div className="flex items-start space-x-2">
+              <FaMapMarkerAlt className="text-primary-400 flex-shrink-0 mt-1" />
 
               <a
                 href="https://www.google.com/maps?q=Top+Floor,+Cynosure+Tech+Near+SUMOSTAND,+opp.+Srinagar+-+Kanyakumari+Highway,+Pamposh+Mohalla,+Kanyakumari,+Bijbehara,+Jammu+and+Kashmir+192124"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-400 transition"
+                className="hover:text-primary-400 transition text-sm md:text-base break-words"
               >
                 Top Floor, Cynosure Tech Near SUMOSTAND, opp. Srinagar -
                 Kanyakumari Highway, Pamposh Mohalla, Kanyakumari, Bijbehara,

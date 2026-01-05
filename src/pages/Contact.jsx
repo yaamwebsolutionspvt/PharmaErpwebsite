@@ -67,15 +67,15 @@ const Contact = () => {
           "pharmacy ERP support",
           "medical store software contact",
         ]}
-        url="https://mediyaam.example.com/contact"
-        canonical="https://mediyaam.example.com/contact"
+        url="pharmacysoftwareindia.com/contact"
+        canonical="pharmacysoftwareindia.com/contact"
         type="website"
         schema={schema}
       />
       <section
         className="relative py-48 md:py-60 bg-center bg-cover bg-no-repeat bg-gray-900"
         style={{
-          backgroundImage: `url(${"https://res.cloudinary.com/dw1sh368y/image/upload/v1767250970/contactbg_ubhkyz.webp"})`,
+          backgroundImage: `url("/assets/images/contactbg.png")`,
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>

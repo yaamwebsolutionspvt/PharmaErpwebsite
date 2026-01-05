@@ -5,8 +5,8 @@ import MainLayout from "../layout/MainLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Pharma ERP",
-  description: "Comprehensive ERP solution for pharmacies",
+  title: "Best Pharmacy Software in India | Mediyaam - Pharmacy Management System",
+  description: "India's best pharmacy management software. Complete pharmacy billing software with POS, inventory, and GST compliance. Trusted by 10,000+ medical stores across India.",
   icons: {
     icon: '/logo.svg',
   },

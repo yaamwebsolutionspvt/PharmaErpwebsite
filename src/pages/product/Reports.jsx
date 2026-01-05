@@ -62,8 +62,8 @@ const Reports = () => {
           'medical store reports',
           'pharmacy business intelligence',
         ]}
-        url="https://mediyaam.example.com/product/reports"
-        canonical="https://mediyaam.example.com/product/reports"
+        url="pharmacysoftwareindia.com/product/reports"
+        canonical="pharmacysoftwareindia.com/product/reports"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

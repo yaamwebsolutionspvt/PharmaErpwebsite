@@ -62,8 +62,8 @@ const CustomerVendor = () => {
           'vendor management software',
           'pharmacy customer database',
         ]}
-        url="https://mediyaam.example.com/product/customer-vendor"
-        canonical="https://mediyaam.example.com/product/customer-vendor"
+        url="pharmacysoftwareindia.com/product/customer-vendor"
+        canonical="pharmacysoftwareindia.com/product/customer-vendor"
         type="website"
       />
       <section className="py-20 bg-gradient-to-br from-primary-50 to-white">

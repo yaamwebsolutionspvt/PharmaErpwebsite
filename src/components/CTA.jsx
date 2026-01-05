@@ -8,7 +8,11 @@ const CTA = ({
   primaryCTA,
   secondaryCTA,
   className = '',
+  headingLevel = 'h2',
 }) => {
+  // Dynamic heading tag based on context
+  const HeadingTag = headingLevel;
+
   return (
     <section className={`bg-primary-600 text-white py-16 ${className}`}>
       <div className="container mx-auto px-4">
@@ -19,9 +23,9 @@ const CTA = ({
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+          <HeadingTag className="text-3xl md:text-4xl font-bold mb-4">{title}</HeadingTag>
           {description && (
-            <p className="text-xl text-primary-100 mb-8">{description}</p>
+            <p className="text-lg md:text-xl text-primary-100 mb-8">{description}</p>
           )}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {primaryCTA && (
@@ -59,6 +63,7 @@ CTA.propTypes = {
     label: PropTypes.string.isRequired,
   }),
   className: PropTypes.string,
+  headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
 };
 
 export default CTA;

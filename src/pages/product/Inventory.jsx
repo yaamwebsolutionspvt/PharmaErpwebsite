@@ -72,8 +72,8 @@ const Inventory = () => {
           'medical store stock management',
           'pharmacy stock tracking',
         ]}
-        url="https://mediyaam.example.com/product/inventory"
-        canonical="https://mediyaam.example.com/product/inventory"
+        url="pharmacysoftwareindia.com/product/inventory"
+        canonical="pharmacysoftwareindia.com/product/inventory"
         type="website"
         schema={schema}
       />

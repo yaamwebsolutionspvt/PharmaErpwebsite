@@ -7,8 +7,8 @@ export const seoConfig = {
   siteName: 'Mediyaam',
   titlePrefix: 'Mediyaam — ',
   defaultDescription: 'Mediyaam is a comprehensive pharmacy ERP solution for billing, inventory, POS, and multi-branch management. Streamline your pharmacy operations with our cloud-based software.',
-  defaultImage: 'https://mediyaam.example.com/assets/share-image.jpg',
-  defaultUrl: 'https://mediyaam.example.com',
+  defaultImage: 'pharmacysoftwareindia.com/assets/share-image.jpg',
+  defaultUrl: 'pharmacysoftwareindia.com',
   defaultKeywords: [
     'pharmacy ERP',
     'pharmacy POS',

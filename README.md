@@ -116,8 +116,8 @@ function MyPage() {
         title="Page Title"
         description="Page description for SEO"
         keywords={['keyword1', 'keyword2']}
-        url="https://mediyaam.example.com/page"
-        canonical="https://mediyaam.example.com/page"
+        url="pharmacysoftwareindia.com/page"
+        canonical="pharmacysoftwareindia.com/page"
       />
       {/* Page content */}
     </>
@@ -135,7 +135,7 @@ function MyPage() {
   publishedTime="2025-01-15T08:00:00Z"
   modifiedTime="2025-01-16T08:00:00Z"
   author="Author Name"
-  image="https://mediyaam.example.com/blog-image.jpg"
+  image="pharmacysoftwareindia.com/blog-image.jpg"
   schema={{
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -168,8 +168,8 @@ function MyPage() {
            title="New Page Title"
            description="Page description"
            keywords={['relevant', 'keywords']}
-           url="https://mediyaam.example.com/new-page"
-           canonical="https://mediyaam.example.com/new-page"
+           url="pharmacysoftwareindia.com/new-page"
+           canonical="pharmacysoftwareindia.com/new-page"
          />
          <section className="py-20">
            <div className="container mx-auto px-4">
@@ -346,7 +346,7 @@ To convert to SSR with Next.js or similar:
 
 For questions or support, contact:
 - Email: info@mediyaam.com
-- Website: https://mediyaam.example.com
+- Website: pharmacysoftwareindia.com
 
 ---
 

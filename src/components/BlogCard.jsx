@@ -13,11 +13,11 @@ const BlogCard = ({ post, delay = 0 }) => {
       className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden"
     >
       {post.image && (
-        <Link href={post.path}>
+        <Link href={post.path} className="block overflow-hidden">
           <img
             src={post.image}
             alt={post.title}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 sm:h-56 md:h-48 object-cover hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </Link>

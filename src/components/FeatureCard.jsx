@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => {
+const FeatureCard = ({ icon: Icon, title, description, delay = 0, headingLevel = 'h3' }) => {
+  // Dynamic heading tag based on context
+  const HeadingTag = headingLevel;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -20,9 +23,9 @@ const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => {
           <Icon className="text-primary-600 group-hover:text-white text-2xl transition-colors duration-300" />
         </motion.div>
       )}
-      <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+      <HeadingTag className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
         {title}
-      </h3>
+      </HeadingTag>
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </motion.div>
   );
@@ -33,6 +36,7 @@ FeatureCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   delay: PropTypes.number,
+  headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
 };
 
 export default FeatureCard;

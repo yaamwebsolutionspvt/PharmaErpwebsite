@@ -43,13 +43,13 @@ describe('Seo Component', () => {
       <Seo
         title="Test Page"
         description="Test description"
-        canonical="https://mediyaam.example.com/test"
+        canonical="pharmacysoftwareindia.com/test"
       />
     );
 
     const canonical = document.querySelector('link[rel="canonical"]');
     expect(canonical).toBeTruthy();
-    expect(canonical.getAttribute('href')).toBe('https://mediyaam.example.com/test');
+    expect(canonical.getAttribute('href')).toBe('pharmacysoftwareindia.com/test');
   });
 
   it('should create Open Graph tags', () => {
@@ -57,8 +57,8 @@ describe('Seo Component', () => {
       <Seo
         title="Test Page"
         description="Test description"
-        url="https://mediyaam.example.com/test"
-        image="https://mediyaam.example.com/test-image.jpg"
+        url="pharmacysoftwareindia.com/test"
+        image="pharmacysoftwareindia.com/test-image.jpg"
       />
     );
 
@@ -72,7 +72,7 @@ describe('Seo Component', () => {
     expect(ogDescription).toBeTruthy();
     expect(ogUrl).toBeTruthy();
     expect(ogImage).toBeTruthy();
-    expect(ogImage.getAttribute('content')).toBe('https://mediyaam.example.com/test-image.jpg');
+    expect(ogImage.getAttribute('content')).toBe('pharmacysoftwareindia.com/test-image.jpg');
   });
 
   it('should create Twitter Card tags', () => {
