@@ -11,7 +11,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel';
 // const heroImage1 = "https://res.cloudinary.com/dw1sh368y/image/upload/v1767251001/contactBg_chdnbd.webp";
 
 // Images should be in public/assets/images/ folder
-const heroImage1 = "/assets/images/contactBg.jpg";
+const heroImage1 = "/assets/images/hero_bg_1.png";
 const dashImage1 = "/assets/images/dashboard_screen_2.png";
 const dashImage2 = "/assets/images/dashboard_screen_1.png";
 
@@ -196,7 +196,7 @@ const Home = () => {
         <section
           className="relative py-20 overflow-hidden"
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.85), rgba(240,249,255,0.80)), url(${heroImages[currentHeroImage].src})`,
+            backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.475), rgba(240,249,255,0.475)), url(${heroImages[currentHeroImage].src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
