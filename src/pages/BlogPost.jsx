@@ -1,11 +1,10 @@
-import { useParams } from 'next/navigation';
+'use client';
+
 import Seo from '../seo/Seo';
 import SectionReveal from '../components/SectionReveal';
+import PropTypes from 'prop-types';
 
-const BlogPost = () => {
-    const params = useParams();
-    const slug = params?.slug;
-
+const BlogPost = ({ slug }) => {
     // Function to fetch post data based on slug (simulating API call)
     const getPostData = (slug) => {
         switch (slug) {
@@ -208,6 +207,10 @@ const BlogPost = () => {
             </article>
         </>
     );
+};
+
+BlogPost.propTypes = {
+    slug: PropTypes.string.isRequired,
 };
 
 export default BlogPost;
