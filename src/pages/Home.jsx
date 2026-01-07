@@ -196,7 +196,7 @@ const Home = () => {
         <section
           className="relative py-20 overflow-hidden"
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.475), rgba(240,249,255,0.45)), url(${heroImages[currentHeroImage].src})`,
+            backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.85), rgba(240,249,255,0.80)), url(${heroImages[currentHeroImage].src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

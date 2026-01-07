@@ -83,6 +83,13 @@
             a { width: 100%; }
         }
     </style>
+    <script>
+        // Redirect to Next.js app's 404 page for proper handling
+        // This ensures the React 404 component loads with full functionality
+        if (window.location.pathname !== '/404') {
+            window.location.replace('/404');
+        }
+    </script>
 </head>
 <body>
     <div class="container">

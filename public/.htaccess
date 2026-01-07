@@ -12,6 +12,15 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Redirect www to non-www (or vice versa - choose one)
 RewriteCond %{HTTP_HOST} ^www\.pharmacysoftwareindia\.com [NC]
 RewriteRule ^(.*)$ https://pharmacysoftwareindia.com/$1 [L,R=301]
+
+# ============================================
+# Next.js Static Export - SPA Routing
+# ============================================
+# Skip real files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Serve index.html for all routes (client-side routing)
+RewriteRule ^(.*)$ /index.html [L]
 </IfModule>
 
 # ============================================
